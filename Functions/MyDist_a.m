@@ -4,6 +4,6 @@ function [R] = MyDist_a(P, P0)
 %   P0 - [1 N] dimension while N it is the point dimension
 %   P  - [M N] dimension while M it is the number of points
 
-R = vecnorm(P-P0,2,2);
+R=sqrt(sum((P-P0).^2,2));
 end
 
