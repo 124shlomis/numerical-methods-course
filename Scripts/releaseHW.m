@@ -11,11 +11,9 @@ delete(fullfile(codeFolder,'releaseHW.m'));
 copyfile(functions,codeFolder,'f')
 sub_name = get_submission_name_from_doc(docsFolder);
 codeFiles = fullfile(codeFolder,'*');
-zip(sub_name,codeFiles);
-zipFile = [sub_name '.zip'];
 pdfFile = fullfile(docsFolder,[sub_name '.pdf']);
-movefile(zipFile,"submission","f");
-copyfile(pdfFile,"submission","f");
+copyfile(pdfFile,codeFolder,"f");
+zip(sub_name,codeFiles);
 
 function zip_name = get_submission_name_from_doc(docsFolder)
     zip_name = '';
